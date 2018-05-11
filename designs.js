@@ -23,13 +23,13 @@ function makeGrid() {
   gridParent.innerHTML = "";
   //make new Grid
   for (let i = inputHeight.value; i > 0; i--) {
-    const newRow = document.createElement('tr');
+    const newRow = document.createElement("tr");
     gridParent.appendChild(newRow);
     for (let j = inputWidth.value; j > 0; j--) {
       const currentRow = gridParent.lastChild;
-      const newData = document.createElement('td');
+      const newData = document.createElement("td");
       currentRow.appendChild(newData);
     }
   }
-  gridParent.addEventListener('click', addColor);
+  gridParent.addEventListener("click", addColor);
 }
