@@ -15,7 +15,7 @@ function makeGrid() {
   // Your code goes here!
   const gridParent = document.querySelector("#pixelCanvas");
   //clear existing Grid
-  
+  gridParent.innerHTML = "";
   //make new Grid
   for (let i = inputHeight.value; i > 0; i--) {
     const newRow = document.createElement('tr');
@@ -28,5 +28,4 @@ function makeGrid() {
   }
 }
 
-//clear existing grid
 //add eventlisteners to cells to add color
