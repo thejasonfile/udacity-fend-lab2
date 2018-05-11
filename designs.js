@@ -3,17 +3,22 @@ const colorInput = document.querySelector("#colorPicker");
 // Select size input
 const inputHeight = document.querySelector("#inputHeight");
 const inputWidth = document.querySelector("#inputWidth");
+// Select Grid Canvas
+const gridParent = document.querySelector("#pixelCanvas");
+// Select Submit Button
+const submitButton = document.querySelector("input[type='submit']");
 
 // When size is submitted by the user, call makeGrid()
-const submitButton = document.querySelector("input[type='submit']");
 submitButton.addEventListener("click", function(e) {
   e.preventDefault();
   makeGrid()
 });
 
+function addColor(e) {
+  e.target.style.backgroundColor = colorInput.value;
+}
+
 function makeGrid() {
-  // Your code goes here!
-  const gridParent = document.querySelector("#pixelCanvas");
   //clear existing Grid
   gridParent.innerHTML = "";
   //make new Grid
@@ -26,6 +31,5 @@ function makeGrid() {
       currentRow.appendChild(newData);
     }
   }
+  gridParent.addEventListener('click', addColor);
 }
-
-//add eventlisteners to cells to add color
